@@ -1,0 +1,337 @@
+%
+% My Resume (c) by Kenneth B. Jensen  <kenneth@jensen.cf>
+%           (c) Anthony Dedominic <anthony@dedominic.pw>
+% 
+% My Resume is licensed under a
+% Creative Commons Attribution-ShareAlike 4.0 International License.
+% 
+% You should have received a copy of the license along with this
+% work.  If not, see <http://creativecommons.org/licenses/by-sa/4.0/>.
+%
+
+% change to a4paper otherwise...
+\documentclass[letterpaper,]{article}
+
+% sans-serif
+\renewcommand{\familydefault}{\sfdefault}
+%\usepackage[]{avant}  % geometric sans, futura-like
+\usepackage[]{helvet} % helvetica
+% end sans-serif
+
+% serif
+%\usepackage[]{mathpazo} % Palatino
+%\usepackage[]{librebaskerville}
+% end serif
+
+% math, other
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+% deprecated as of 2015 \usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+	\usepackage{mathspec}
+  \else
+	\usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+
+% margins, etc
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% NOTE: set headheight to whatever the warning PDFLaTeX throws!!!! %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[
+	margin=1.6cm,
+	headheight=26.495pt,
+	includehead,
+	includefoot,
+]{geometry}
+
+% hrefs
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+			pdftitle={Kenneth B. Jensen},
+			pdfborder={0 0 0},
+			breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+
+% paragraph indenting, other
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+% hyphens are gross
+\hyphenpenalty 10000
+
+% Header bar
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[L]{\fontsize{24}{10}\selectfont Kenneth B. Jensen}
+\fancyhead[C]{}
+\fancyhead[R]{\href{tel:+14328941338}{+1 (432) 894-1338}\\\href{mailto:kenneth@jensen.cf}{kenneth@jensen.cf}}
+\fancyfoot[L]{\thepage}
+\fancyfoot[C]{}
+% not really necessary, not really packed with a generic TeXLive setup
+\IfFileExists{qrcode.sty}{%
+	\usepackage{qrcode} % cool qr codes
+	\fancyfoot[R]{\qrcode[height=0.5in]{https://github.com/kjensenxz/resume/raw/master/resume.pdf}}%
+}
+
+% extra table packages and setup
+\usepackage{tabularx}
+% vertically align tabularx columns
+\def\tabularxcolumn#1{m{#1}}
+\usepackage{multirow}
+\usepackage{caption}
+% get rid of ( Figure X: Your Caption )
+\captionsetup{labelformat=empty}
+% \usepackage{longtable}
+
+% table floating
+\usepackage{float}
+
+\author{Kenneth B. Jensen\\kenneth@jensen.cf\\Midland, TX. 79707\\+1 (432)-894-1338}
+\title{Kenneth B. Jensen}
+
+\begin{document}
+% \maketitle
+
+\subsection{Executive Summary}\label{about}
+
+\emph{Service technician, systems administrator, technical writer,
+and software developer seeking challenging opportunities to bring 
+solutions ranging from IT and software to power electronics and 
+telecommunications. Skilled in troubleshooting and quickly understanding 
+systems, I am seeking to work for a results-driven team.}
+
+\subsection{Work Experience}\label{work-experience}
+
+\begin{table}[H]
+\centering
+	\caption{\textbf{Ontaris Technologies, LLC} --- April 2018 to May 2018}
+	\begin{tabularx}{\textwidth}{r|X}
+		\begin{tabular}{@{}c@{}} % hacky cruft that helps with alignment
+			CIO/CTO \\ 
+			\& \\
+			Administration \\
+		\end{tabular}
+		& Startup business delivering general "full-stack" technology
+		solutions from the low-level details of hardware implementation
+		to integration with various existing technological and human 
+		systems (e.g. business telephone systems, security systems,
+		industrial equipment) software/web interfaces. Responsible for
+		developing and implementing both internal services and production
+		solutions. \\
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+\centering
+	\caption{\textbf{Texas Telephone \& Data Technologies} --- June 2017 to May 2018}
+	\begin{tabularx}{\textwidth}{r|X}
+		\begin{tabular}{@{}r@{}}
+			IT Director \\
+		\end{tabular}
+		& Developed internal IT infrastructure and line-up of new IT products
+		for telecommunications solutions. Researched software and web platforms
+		for use both internally and for solutions customers. \\
+		& \\
+		\begin{tabular}{@{}r@{}}
+			Service \\
+			Technician \\
+		\end{tabular}
+		& Installed \& serviced computer networks, alarm/access control \& 
+		security/camera systems, telephone lines \& systems, 
+		extra-low-voltage \& low-voltage cabling \& wiring (up to 500V) 
+		for power \& communications, and industrial control/monitoring
+		systems. \\
+	\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+\centering
+	\caption{Self-Employed / \textbf{Jensen Informatics} --- 2014 to \emph{current}}
+	\begin{tabularx}{\textwidth}{r|X}
+		\begin{tabular}{@{}c@{}}
+			Contractor, \\
+			\fontsize{8}{10}\selectfont \textbf{B\&B Telecom} \\ 
+			\fontsize{8}{10}\selectfont \textbf{\& Data Solutions}
+		\end{tabular}
+		& Serviced customers in the west Texas area from Monahans to Big Spring,
+		responsible for installation and maintenance of IT and telecommunications
+		equipment and wiring, including rack-mount equipment (servers, routers/,
+		switches) and telephone wiring. \\
+		\begin{tabular}{@{}r@{}}
+			Web \\
+			Architect \\
+		\end{tabular}
+		& Designed, implemented, and maintained websites and web applications, resold
+		and managed cloud hosting (IaaS), hosted email and directory services, and
+		researched emerging web languages and frameworks. \\
+
+		%%% AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+		%%%%%%%%%%%%% AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+		%AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa
+		\begin{tabular}{@{}r@{}}
+			Service  \\
+			Technician \\
+		\end{tabular}
+		& Repaired consumer electronics from computers to cellphones and TVs;
+		installed and maintained IT equipment from desktops, routers, printers, 
+		switches, firewalls, and telephones for small/home offices; data forensics
+		and recovery; simple electrical (primarily wiring outlets up to 240V);
+		and installed coaxial camera systems. \\
+	\end{tabularx}
+\end{table}
+
+\subsection{Education}\label{education}
+
+\begin{table}[H]
+	\begin{minipage}{0.5\linewidth}
+	\centering
+	\begin{tabular}{r|l}
+		\multirow{4}{*}{Fall 2017}
+		& University of Texas of the Permian Basin \\
+		& Odessa, TX. \\
+		& B.S. in Mathematics \& Computer Science \\
+		& 41 + 15 hours / Withdrew due to injury \\
+	\end{tabular}
+	\end{minipage}
+	\begin{minipage}{0.5\linewidth}
+	\centering
+	\begin{tabular}{r|l}
+		\multirow{4}{*}{Spring 2017} 
+		& Odessa College \\
+		& Odessa, TX. \\
+		& A.A. in General Studies (STEM Focus) \\
+		& 41 hours / Transfer to UTPB \\
+	\end{tabular}
+	\end{minipage}
+	\vspace{1.1em}
+	\begin{center}
+	\begin{minipage}{0.5\linewidth}
+	\centering
+	\begin{tabular}{r|l}
+		\multirow{5}{*}{May 2017} 
+		& Carlsbad High School / Permian High School \\
+		& Carlsbad, NM. ('13-'15) / Odessa, TX. ('15-'17)  \\
+		& Honors: \textit{Academic Hall of Fame} \\
+		& \textit{1st at 2017 Chevron Design Challenge} \\
+		& \textit{4th at 2017 Texas AcaDec Regionals} \\
+	\end{tabular}
+	\end{minipage}
+	\end{center}
+\end{table}
+
+
+\subsection{Notable Projects \& Publications}\label{projects}
+
+\begin{table}[H]
+	\centering
+	\begin{minipage}[t]{0.30\linewidth}
+		\centering
+		\caption{
+			\textit{How is GNU `yes` so fast?} \\ 
+			\fontsize{8}{10}\selectfont Article, self-published
+		}
+		\begin{tabularx}{\textwidth}{r|X}
+			&
+			Analysis of the GNU Project's implementation of `yes`---a
+			common but often overlooked scripting utility---and why
+			their implementation had 10 times higher throughput
+			than other Unix/Unix-like systems' implementations. \\
+		\end{tabularx}
+	\end{minipage}
+	\hspace{0.03\linewidth}
+	\begin{minipage}[t]{0.30\linewidth}
+		\centering
+		\caption{
+			Virtualization Framework \\
+			\fontsize{8}{10}\selectfont Bash (Shell), Perl, C
+		}
+		\begin{tabularx}{\textwidth}{r|X}
+			\begin{tabular}{@{}r@{}}
+			\end{tabular} & 
+			Self-building, customizable, and completely sandboxed Linux 
+			system using BusyBox for use in back-end service hosting
+			utilizing the latest in virtualization features for running
+			multiple isolated systems on single-computer or "clustered"
+			environments.
+		\end{tabularx}
+	\end{minipage}
+	\hspace{0.03\linewidth}
+	\begin{minipage}[t]{0.30\linewidth}
+		\centering
+		\caption{
+			Potentially-Hazardous-Equipment Monitoring and Control \\ 
+			\fontsize{8}{10}\selectfont Industrial Automation
+		}
+		\begin{tabularx}{\textwidth}{r|X}
+			&
+			Designed and implemented completely autonomous 
+			temperature monitoring and control system for industrial equipment 
+			prone to either exploding or catching fire with fail-safe 
+			backups, and web user interface \& control with automatic statistics 
+			reporting. \\
+		\end{tabularx}
+	\end{minipage}
+\end{table}
+
+\subsection{Competencies}\label{competencies}
+
+\begin{center}
+\begin{tabular}{r|l}
+	Github & \href{https://github.com/kjensenxz}{https://github.com/kjensenxz} \\
+	\\
+	\multirow{4}{*}{Languages} & C, Python, x86\_64 Assembly, Java (Build tools, IDEs and various frameworks) \\
+			& JavaScript (Node.js, web development, tools, etc) \\
+			& Perl, Python, Shell scripting, PHP, other scripting languages \\
+			& SQL (MSSQL/T-SQL, PostgreSQL, MySQL) \\
+			& Document preparation languages (HTML/CSS, \LaTeX, Markdown) \\
+	\\
+	\multirow{5}{*}{Software/IT} & Linux/GNU, Windows/Server, UNIX (OpenBSD, FreeBSD) \\
+				     & Internetworking and underlying protocols/services (TCP/UDP/ICMP/IP, HTTP/S, DNS, LDAP, SSH, etc.)  \\
+				     & Leveraging various databases for object and persistent app storage \\
+				     & Object oriented and functional design \\
+				     & Advanced text processing (regexp, flex/bison, pegjs, etc) \\
+\end{tabular}
+\end{center}
+
+\subsection{Licenses}\label{competencies}
+
+\begin{center}
+\begin{tabular}{r|l}
+	\multirow{3}{*}{Apprentice Electrician } & TDLR License \#407623 \\
+			& Issued July 24, 2017 \\
+			& Expires July 24, 2018 \\
+	\\
+	\multirow{1}{*}{TX. Driver License} & Class C \\
+\end{tabular}
+\end{center}
+\end{document}
